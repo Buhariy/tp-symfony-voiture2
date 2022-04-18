@@ -1,0 +1,33 @@
+{% extends "admin/admin_base.html.twig" %}
+
+{% block body %}
+
+{{form_start(vehiculeForm)}}
+
+	{{form_label(vehiculeForm.titre,'Titre :', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.titre, {'attr' : {'class' : 'input', 'placeholder' : 'Titre'}})}}
+
+	{{form_label(vehiculeForm.marque,'Marque  :', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.marque, {'attr' : {'class' : 'input', 'placeholder' : 'Marque'}})}}
+
+	{{form_label(vehiculeForm.modele,'Modèle :', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.modele, {'attr' : {'class' : 'input', 'placeholder' : 'Modèle'}})}}
+
+	{{form_label(vehiculeForm.description,'Description:', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.description, {'attr' : {'class' : 'input', 'placeholder' : 'Description'}})}}
+
+	{{form_label(vehiculeForm.photo,'Photo du véhicule :', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.photo, {'attr' : {'class' : 'input', 'placeholder' : 'Photo du véhicule '}})}}
+
+	{{form_label(vehiculeForm.prix_journalier,'Prix journalier :', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.prix_journalier, {'attr' : {'class' : 'input', 'placeholder' : 'Prix journalier'}})}}
+
+	{{form_label(vehiculeForm.date_enregistrement,'Date d\enregistrement :', {'label_attr' : {'class' : 'label'}})}}
+	{{form_widget(vehiculeForm.date_enregistrement, {'attr' : {'class' : 'input', 'placeholder' : 'Date d\enregistrement'}})}}
+
+	{{form_widget(vehiculeForm.Enregistrer, {'attr' : {'class' : 'input',}})}}
+
+
+	{{form_end(vehiculeForm)}}
+
+{% endblock %}

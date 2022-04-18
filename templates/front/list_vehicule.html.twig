@@ -1,0 +1,40 @@
+{% extends "admin/admin_base.html.twig" %}
+
+{% block body %}
+
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Titre</th>
+					<th scope="col">Marque</th>
+					<th scope="col">Modele</th>
+					<th scope="col">Description</th>
+					<th scope="col">Photo</th>
+					<th scope="col">Prix Journalier</th>
+					<th scope="col">Date d'enregistrement</th>
+					<th scope="col">Action</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for vehicule in vehicules %}
+					<tr>
+						<td scope="col">{{vehicule.id}}</td>
+						<td scope="col"><a href="{{ path('front_show_vehicule', {'id' : vehicule.id}) }}">{{vehicule.titre}}</a></td>
+						<td scope="col">{{vehicule.marque}}</td>
+						<td scope="col">{{vehicule.modele}}</td>
+						<td scope="col">{{vehicule.description}}</td>
+						<td scope="col"><img src="{{ asset("media/" ~ vehicule.photo) }}" alt="Véhicule" width="100px"></td>
+						<td scope="col">{{vehicule.prixJournalier}}€</td>
+						<td scope="col">{{vehicule.dateEnregistrement|date('Y-m-d H:i:s')}}</td>
+						<td>
+							<a class="btn btn-primary" href="#">Louer ce véhicule</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

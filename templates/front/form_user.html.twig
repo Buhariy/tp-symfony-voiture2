@@ -1,0 +1,27 @@
+{% extends "front/front_base.html.twig" %}
+
+{% block body %}
+    {{form_start(userForm)}}
+
+        {{form_label(userForm.nom,'Nom :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(userForm.nom, {'attr' : {'class' : 'input', 'placeholder' : 'Nom'}})}}
+
+        {{form_label(userForm.prenom,'Prénom :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(userForm.prenom, {'attr' : {'class' : 'input', 'placeholder' : 'Prénom'}})}}
+
+        {{form_label(userForm.pseudo,'Pseudo :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(userForm.pseudo, {'attr' : {'class' : 'input', 'placeholder' : 'Pseudo'}})}}
+
+        {{form_label(userForm.civilite,'Civilité :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(userForm.civilite, {'attr' : {'class' : 'input', 'placeholder' : 'Civilité'}})}}
+
+        {{form_label(userForm.email,'Email :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(userForm.email, {'attr' : {'class' : 'input', 'placeholder' : 'Email'}})}}
+
+        {{form_label(userForm.password,'Mot de passe  :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(userForm.password, {'attr' : {'class' : 'input', 'placeholder' : 'Mot de passe'}})}}
+
+        {{form_widget(userForm.Enregistrer, {'attr' : {'class' : 'input',}})}}
+
+	{{form_end(userForm)}}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "front/front_base.html.twig" %}
+
+{% block body %}
+    {{form_start(cmdForm)}}
+
+        {{form_label(cmdForm.date_heure_depart,'date de départ :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(cmdForm.date_heure_depart, {'attr' : {'class' : 'input', 'placeholder' : 'date de départ'}})}}
+
+        {{form_label(cmdForm.date_heure_fin,'date de fin :', {'label_attr' : {'class' : 'label'}})}}
+        {{form_widget(cmdForm.date_heure_fin, {'attr' : {'class' : 'input', 'placeholder' : 'date de fin'}})}}
+
+        {{form_widget(cmdForm.Enregistrer, {'attr' : {'class' : 'input',}})}}
+
+	{{form_end(cmdForm)}}
+{% endblock %}
