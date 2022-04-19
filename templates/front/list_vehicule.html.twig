@@ -30,7 +30,7 @@
 						<td scope="col">{{vehicule.prixJournalier}}€</td>
 						<td scope="col">{{vehicule.dateEnregistrement|date('Y-m-d H:i:s')}}</td>
 						<td>
-							<a class="btn btn-primary" href="#">Louer ce véhicule</a>
+							<a class="btn btn-primary" href="{{ path('front_create_commande', {'id' : vehicule.id} )}}">Louer ce véhicule</a>
 						</td>
 					</tr>
 				{% endfor %}

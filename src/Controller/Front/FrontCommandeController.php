@@ -24,12 +24,13 @@ class FrontCommandeController extends AbstractController
     public function createCommande($id,
      CommandeRepository $commandeRepository,
      Request $request,
-     UserRepository $userRepository, EntityManagerInterface $entityManagerInterface,VehiculeRepository $vehiculeRepository)
-    {
+     UserRepository $userRepository, EntityManagerInterface $entityManagerInterface, VehiculeRepository $vehiculeRepository)
+    { 
+        $vehicule = $vehiculeRepository->find($id);
         $cmd = new Commande();
         $cmdForm = $this->createForm(CommandeType::class, $cmd);
-        $vehicule = $entityManagerInterface->getRepository(Vehicule::class);
-        //VehiculeRepository::find($id);
+        $cmd->setVehicule($vehicule);
+       
         $cmdForm->handleRequest($request);
 
         if ($cmdForm->isSubmitted() && $cmdForm->isValid()) {
@@ -54,8 +55,8 @@ class FrontCommandeController extends AbstractController
             //dd($intervalle);
             $intervalleJours = $intervalle->days;
             //recup du prix journalier du vehicule
-            $vehicule = $cmd->getVehicule();
-            dd($cmd);
+    
+            
             $prixJournalier  = $vehicule->getPrixJournalier();
             //calcul du prix total
             $prixTotale = $intervalleJours * $prixJournalier;
